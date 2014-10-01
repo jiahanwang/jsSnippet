@@ -8,7 +8,7 @@
 
 function loadStyle (url, callback){
    var link = document.createElement('link');
-   link.ref = 'stylesheet';
+   link.rel = 'stylesheet';
    link.type = 'text/css';
    // for IE
    if(link.readyState){
