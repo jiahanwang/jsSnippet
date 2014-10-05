@@ -5,6 +5,7 @@
 * Source: Pro JavaScript - Nicholas C.Zakas
 *
 **/
+
 var EventUtil = {
    
    addHandler : function (element, type, handler) {

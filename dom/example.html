@@ -1,0 +1,38 @@
+<html>
+
+<body>
+   <div id="test">
+      <input type='button' id='myID' class='button1  button2' value='Button'/>
+   </div>
+
+</body>
+<script>
+   var button = document.getElementById('myID');
+   button.addEventListener('click',  function (){
+     //this.setAttribute('custom', 'aaaaaa');
+     this.custom = 'aaaa';
+     alert(this.custom);
+
+   }, true);
+
+   document.addEventListener('click',  function (){
+      alert('document1');
+   }, true);
+
+   document.onclick = function (){
+      alert('document2-2');
+   };
+   document.addEventListener('click',  function (){
+      alert('document2');
+   }, false);
+   
+   var div = document.getElementById('test');
+   var textNode = document.createTextNode(window.getComputedStyle === document.defaultView.getComputedStyle);
+   div.appendChild(textNode);
+
+
+
+
+</script>
+
+</html>
