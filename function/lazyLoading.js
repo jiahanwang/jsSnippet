@@ -1,6 +1,6 @@
 /**
 *
-* Catergory: Peformance
+* Catergory: Function 
 * Usage: Lazy loading functions
 * Source: Pro JavaScript - Nicholas C.Zakas
 *
