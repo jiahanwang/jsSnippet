@@ -60,7 +60,7 @@ function Square(size) {
 Square.prototype = Object.create(Rectangular.prototype, 
                                  {
                                     constructor: {
-                                       cosnfigurable: false,
+                                       configurable: false,
                                        enumberable: false,
                                        value: Square,
                                        writable: true;
@@ -95,7 +95,7 @@ function Square(size) {
 Square.prototype = Object.create(Rectangular.prototype, 
                                  {
                                     constructor: {
-                                       cosnfigurable: false,
+                                       configurable: false,
                                        enumberable: false,
                                        value: Square,
                                        writable: true;
