@@ -57,7 +57,8 @@ function Square(size) {
    this.height = size;
 }
 
-Square.prototype = Object.create(Rectangular.prototype, 
+if (Object.create) {
+   Square.prototype = Object.create(Rectangular.prototype, 
                                  {
                                     constructor: {
                                        configurable: false,
@@ -66,6 +67,23 @@ Square.prototype = Object.create(Rectangular.prototype,
                                        writable: true;
                                     }
                                  });
+} else {
+   inheritPrototype(Rectangular.prototype, Square);
+}
+
+function inheritPrototype (prototype, subtype) {
+   // Parasitic inheritance
+   var new_prototype = object(prototype);
+   new_prototype.constructor = subtype;
+   subtype.prototype = new_prototype;
+}
+
+function object(prototype) {
+   // Prototypal inheritance
+   function F () {};
+   F.prototype = prototype;
+   return new F();
+}
 
 Square.prototype.toString = function () {
    return "[Square length:" + this.length + " width:" + this.width + "]";
@@ -91,6 +109,7 @@ Rectangular.prototype.toString = function () {
 function Square(size) {
    Rectangluar.call(this, size, size);
 }
+
 
 Square.prototype = Object.create(Rectangular.prototype, 
                                  {
