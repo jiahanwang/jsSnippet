@@ -9,10 +9,11 @@
 function encodeObjectData (data) {
    if(typeof data !== 'object') return null;
    var pairs = [];
-   for(var property in data){
-      if(!data.hasOwnProperty(property)) continue;
-      if(typeof property === 'function') continue;
-      pairs.push(encodeURIComponent(property.replace(' ', '+')) + '=' +  encodeURIComponent(data[property].replace(' ', '+')));
+   for(var prop in data){
+      if(!data.hasOwnProperty(prop)) continue;
+      if(typeof data[prop] === 'function') continue;
+      var s= encodeURIComponent(prop) + '=' + encodeURIComponent(data[prop]);
+      pairs.push(s.replace(/(%20)+/g, '+'));
    }
    return pairs.join('&');
 }
