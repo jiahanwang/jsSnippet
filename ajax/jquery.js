@@ -17,7 +17,7 @@ $.ajaxSetup({
 // All calls this function
 $.ajax({
    async: true,
-   url : 'http://ww.example.com/ajax',
+   url : 'http://www.example.com/ajax',
    // HTTP method
    type: 'GET',
    // data to append to url (GET) or HTTP body (POST)
