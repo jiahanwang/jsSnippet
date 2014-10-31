@@ -24,22 +24,22 @@ function Person (name) {
 Person.prototype.name = "Prototype";
 
 Person.prototype.sayName2 = function () {
-   console.log('This is inside a prototype ' + name); // global
+   console.log('This is inside a prototype ' + name); 
 }
 Person.prototype.sayName3 = function () {
-   console.log('This is inside a prototype ' + this.name); // constructor not prototype 
+   console.log('This is inside a prototype ' + this.name); 
 }
 Person.prototype.sayId2 = function () {
-   console.log('This is inside a prototype ' + id); //global
+   console.log('This is inside a prototype ' + id); 
 }
 Person.prototype.sayId3 = function () {
-   console.log('This is inside a prototype ' + this.id); //global
+   console.log('This is inside a prototype ' + this.id); 
 }
 Person.prototype.sayGender2 = function () {
-   console.log('This is inside a prototype ' + gender); //global
+   console.log('This is inside a prototype ' + gender); 
 }
 Person.prototype.sayGender3 = function () {
-   console.log('This is inside a prototype ' + this.gender); //global
+   console.log('This is inside a prototype ' + this.gender); 
 }
 
 var name = 'Global';
@@ -47,18 +47,18 @@ var id = 1111111;
 var gender = "Global";
 var person1 = new Person("Instance");
 
-person1.sayName1();
-person1.sayName2();
-person1.sayName3();
-person1.__proto__.sayName3();
+person1.sayName1(); // constructor parameter
+person1.sayName2(); // global
+person1.sayName3(); // instance
+person1.__proto__.sayName3(); //prototype
 
-person1.sayId1();
-person1.sayId2();
-person1.sayId3();
+person1.sayId1(); // global
+person1.sayId2(); // global
+person1.sayId3(); // instance
 
-person1.sayGender1();
-person1.sayGender2();
-person1.sayGender3(); //undefined
+person1.sayGender1(); // instance
+person1.sayGender2(); // global
+person1.sayGender3(); // instance undefined
 
 
 
